@@ -131,7 +131,7 @@ const store = {
 					? '1.2' // Profile header default (doesn't need to be an int)
 					: '2', // Mobile default
 			autoLaunch: true,
-			finale: false,
+			finale: true,
 			skyLighting: SKY_LIGHT_NORMAL + '',
 			hideControls: IS_HEADER,
 			longExposure: false,
@@ -300,7 +300,7 @@ const scaleFactorSelector = () => store.state.config.scaleFactor;
 const helpContent = {
 	shellType: {
 		header: '烟花类型',
-		body: '此项设置烟花的发射类型。选择“随机”可以获得更精彩的视觉效果！'
+		body: '此项设置烟花的发射类型。选择"随机"可以获得更精彩的视觉效果！'
 	},
 	shellSize: {
 		header: '烟花大小',
@@ -312,7 +312,7 @@ const helpContent = {
 	},
 	skyLighting: {
 		header: '天空照明',
-		body: '此项设置在烟花爆炸时的背景亮度。如果背景在您的屏幕上看起来太亮，那么您可以尝试将其设置为“暗淡”或“无”。'
+		body: '此项设置在烟花爆炸时的背景亮度。如果背景在您的屏幕上看起来太亮，那么您可以尝试将其设置为"暗淡"或"无"。'
 	},
 	scaleFactor: {
 		header: '烟花规模',
@@ -324,7 +324,7 @@ const helpContent = {
 	},
 	finaleMode: {
 		header: '结局模式',
-		body: '此项设置可以间歇性发射更密集的烟花。可能会导致卡顿，而且需要启用“自动发射”。'
+		body: '此项设置可以间歇性发射更密集的烟花。可能会导致卡顿，而且需要启用"自动发射"。'
 	},
 	hideControls: {
 		header: '隐藏控制按钮',
@@ -1406,7 +1406,7 @@ function render(speed) {
 	trailsCtx.lineWidth = Star.drawWidth;
 	trailsCtx.lineCap = isLowQuality ? 'square' : 'round';
 	mainCtx.strokeStyle = '#fff';
-  mainCtx.lineWidth = 1;
+  mainCtx.lineWidth = 1;
 	mainCtx.beginPath();
 	COLOR_CODES.forEach(color => {
 		const stars = Star.active[color];
